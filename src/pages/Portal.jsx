@@ -9,6 +9,14 @@ import {
   LayoutDashboard,
   GitCompare,
   ChartNoAxesColumn,
+  FileClock,
+  MessageSquareWarning,
+  BookOpen,
+  Truck,
+  ShieldCheck,
+  AlertTriangle,
+  Globe,
+  Activity,
 } from "lucide-react";
 
 import {
@@ -16,8 +24,9 @@ import {
   FcAdvertising,
   FcDocument,
   FcFinePrint,
-  FcFolder,
   FcApprove,
+  FcVoicePresentation,
+  FcAbout,
 } from "react-icons/fc";
 
 import iconBT from "../assets/images/iconbt.png";
@@ -26,7 +35,8 @@ import iconPQ from "../assets/images/iconpassq.png";
 import iconES from "../assets/images/iconesps.png";
 import iconWM from "../assets/images/iconwebmon.png";
 import MenuItem from "../components/MenuItem";
-import logo from "../assets/images/barantin-L-BW.png";
+import DataMenuItem from "../components/DataMenuItem";
+import logo from "../assets/images/barantin.png";
 
 export default function Portal() {
   return (
@@ -38,7 +48,18 @@ export default function Portal() {
     >
       {/* HEADER */}
       <header className="bg-white/30 backdrop-blur-md rounded-b-[50px] p-6 shadow-md">
-        <img src={logo} alt="Barantin" className="h-16" />
+        <div className="flex items-center gap-4">
+          <img src={logo} alt="Barantin" className="h-16" />
+
+          <div>
+            <h1 className="text-2xl font-semibold text-gray-800">
+              Landing Page Barantin
+            </h1>
+            <p className="text-sm text-gray-600">
+              Sistem Aplikasi Terintegrasi
+            </p>
+          </div>
+        </div>
       </header>
 
       {/* CONTENT */}
@@ -47,7 +68,7 @@ export default function Portal() {
         <div className="relative">
           <div className="absolute -top-5 left-8 z-10">
             <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-700 shadow-md">
-              Admin
+              Internal
             </div>
           </div>
 
@@ -74,6 +95,13 @@ export default function Portal() {
             />
 
             <MenuItem
+              icon={QrCode}
+              colorIcon={iconPQ}
+              label="PassQ"
+              url="https://passq.karantinaindonesia.go.id/officer/"
+            />
+
+            <MenuItem
               icon={Clock}
               colorIcon={iconPS}
               label="ePresensi"
@@ -93,7 +121,7 @@ export default function Portal() {
         <div className="relative">
           <div className="absolute -top-5 left-8 z-10">
             <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-700 shadow-md">
-              Pengguna Jasa
+              Eksternal
             </div>
           </div>
 
@@ -125,26 +153,63 @@ export default function Portal() {
               label="Check Cert"
               url="https://ptk.karantinaindonesia.go.id/check-cert/"
             />
-
-            <MenuItem
-              icon={QrCode}
-              colorIcon={iconPQ}
-              label="PassQ"
-              url="https://passq.karantinaindonesia.go.id/officer/"
-            />
           </div>
         </div>
 
         {/* SIDEBAR 3 */}
         <div className="relative">
-          <div className="absolute -top-5 left-8 z-10">
+          <div className="absolute -top-5 left-9 z-10">
             <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-700 shadow-md">
               Data
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-6 p-6 pt-10 w-100 h-86 bg-white/30 backdrop-blur-md rounded-[60px] shadow-md min-h-50">
-            {/* isi nanti */}
+          <div className="grid grid-cols-1 gap-6 p-6 pt-10 bg-white/30 backdrop-blur-md rounded-[50px] shadow-md">
+            <DataMenuItem
+              icon={FileClock}
+              colorIcon={FcVoicePresentation}
+              label="Strategic"
+              menus={[
+                {
+                  label: "Katalog Ekspor",
+                  icon: BookOpen,
+                  url: "https://app.powerbi.com/view?r=eyJrIjoiY2E2YjZiN2YtNGUwMS00YTYxLWI3NDEtMjdlODk3ZjdhZDExIiwidCI6IjFiNmQ3NTQ1LWE3YmEtNGVmZi05YjU1LWY1MTZiNTk2MWZlMCIsImMiOjEwfQ%3D%3D",
+                },
+                {
+                  label: "Distribusi Komoditas",
+                  icon: Truck,
+                  url: "https://app.powerbi.com/view?r=eyJrIjoiMDI0ZjkzOTktODE2Yi00ZDIwLWI4ZWItMWMxMTk4OGUxODE0IiwidCI6IjFiNmQ3NTQ1LWE3YmEtNGVmZi05YjU1LWY1MTZiNTk2MWZlMCIsImMiOjEwfQ%3D%3D",
+                },
+                {
+                  label: "Sertifikasi Karantina",
+                  icon: ShieldCheck,
+                  url: "https://app.powerbi.com/view?r=eyJrIjoiN2JkOTYyYmUtMzk2NC00MmI0LWE0ZmYtMDYyYjM2YjhjN2JkIiwidCI6IjFiNmQ3NTQ1LWE3YmEtNGVmZi05YjU1LWY1MTZiNTk2MWZlMCIsImMiOjEwfQ%3D%3D",
+                },
+              ]}
+            />
+
+            <DataMenuItem
+              icon={MessageSquareWarning}
+              colorIcon={FcAbout}
+              label="Early Warning"
+              menus={[
+                {
+                  label: "Informasi Domas",
+                  icon: AlertTriangle,
+                  url: "https://notice.karantinaindonesia.go.id/puskodal/login.php",
+                },
+                {
+                  label: "Incoming e-Certificate",
+                  icon: Globe,
+                  url: "https://esps.karantinaindonesia.go.id/dashboard/main",
+                },
+                {
+                  label: "Prior Notice",
+                  icon: Activity,
+                  url: "https://notice.karantinaindonesia.go.id/puskodal/login.php",
+                },
+              ]}
+            />
           </div>
         </div>
       </main>
