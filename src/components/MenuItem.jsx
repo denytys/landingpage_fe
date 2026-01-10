@@ -15,7 +15,7 @@ export default function MenuItem({
       >
         {/* CARD */}
         <div
-          className="w-26 h-26 rounded-[28px] bg-white/30 flex items-center justify-center 
+          className="w-19 md:w-26 h-19 md:h-26 rounded-[28px] bg-white/30 flex items-center justify-center 
           shadow-sm transition-all duration-300 hover:shadow-lg hover:bg-blue-600/30"
         >
           {/* ICON WRAPPER */}

@@ -21,7 +21,7 @@ export default function DataMenuItem({
         bg-white/30
         hover:bg-blue-600/30
         shadow-md
-        transition-all duration-400
+        transition-all duration-500
       "
     >
       {/* HEADER – FIXED HEIGHT */}
@@ -65,26 +65,35 @@ export default function DataMenuItem({
         </div>
 
         <div className="flex flex-col gap-1">
-          <h3 className="text-sm font-semibold text-slate-800 leading-tight">
+          <h3 className="text-lg font-semibold text-slate-800 leading-tight">
             {label}
           </h3>
-          <p className="text-xs text-slate-600 mt-1 leading-snug transition-all duration-500">
-            {label === "Strategic" &&
-              "Data historis yang dapat digunakan untuk keperluan pengambilan keputusan secara komprehensif serta dapat digunakan pula oleh instansi lain untuk menganalisa serta data awal pengambilan kebijakan sektoral."}
+          {label === "Strategic" && (
+            <p
+              className={`text-xs text-slate-600 mt-1 leading-snug transition-all duration-500
+                ${open ? "opacity-0 max-h-0" : "opacity-100 max-h-40"}`}
+            >
+              Data historis yang dapat digunakan untuk keperluan pengambilan
+              keputusan secara komprehensif serta dapat digunakan pula oleh
+              instansi lain untuk menganalisa serta data awal pengambilan
+              kebijakan sektoral.
+            </p>
+          )}
 
-            {label === "Early Warning" &&
-              "Informasi preborder dan peringatan dini untuk keperluan pengambilan keputusan sebagai upaya tindakan pencegahan atau mitigasi resiko dalam tindakan operasional karantina."}
-
-            {label === "Daily" &&
-              "Data realtime operasional perkarantinaan di Unit Pelaksana Teknis Karantina"}
-
-            {label === "Tactical" &&
-              "Data terkait kegiatan operasional karantina disemua lokus yang menggambarkan pola penerapan kebijakan teknis Badan Karantina Indonesia."}
-          </p>
+          {label === "Early Warning" && (
+            <p
+              className={`text-xs text-slate-600 mt-1 leading-snug transition-all duration-500
+                ${open ? "opacity-0 max-h-0" : "opacity-100 max-h-40"}`}
+            >
+              Informasi preborder dan peringatan dini untuk keperluan
+              pengambilan keputusan sebagai upaya tindakan pencegahan atau
+              mitigasi resiko dalam tindakan operasional karantina.
+            </p>
+          )}
         </div>
       </div>
 
-      {/* SUB MENU */}
+      {/* SUB MENU – NATURAL EXPAND */}
       <div
         className={`grid gap-3 px-6 overflow-hidden transition-all duration-600 ease-out 
           ${open ? "pb-6 max-h-75 opacity-100" : "pb-0 max-h-0 opacity-0"}`}
@@ -103,7 +112,7 @@ export default function DataMenuItem({
             "
           >
             <item.icon size={18} className="text-slate-700" />
-            <span className="text-xs font-medium text-slate-800">
+            <span className="text-sm font-medium text-slate-800">
               {item.label}
             </span>
           </div>
