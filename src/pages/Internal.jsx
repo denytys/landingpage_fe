@@ -12,10 +12,12 @@ import iconPS from "../assets/images/iconpresensi.png";
 import iconPQ from "../assets/images/iconpassq.png";
 import iconES from "../assets/images/iconesps.png";
 import iconWM from "../assets/images/iconwebmon.png";
-
 import MenuItem from "../components/MenuItem";
+import { useLoading } from "../components/GlobalLinkLoader";
 
 export default function Internal() {
+  const { setLoading } = useLoading();
+
   return (
     <div className="relative">
       <div className="absolute -top-5 left-8 z-10">
@@ -31,6 +33,7 @@ export default function Internal() {
           label="Best Trust"
           url="https://apps.karantinaindonesia.go.id/"
         />
+
         <MenuItem
           icon={Settings}
           colorIcon={iconPS}

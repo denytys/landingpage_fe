@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import UpdateCard from "../components/UpdateCard";
 
 import {
   FileClock,
@@ -193,8 +192,6 @@ export default function Data({ activeData, setActiveData }) {
           </div>
         </div>
       </div>
-      {/* ===== UPDATE INFO CARD ===== */}
-      <UpdateCard />
     </div>
   );
 }

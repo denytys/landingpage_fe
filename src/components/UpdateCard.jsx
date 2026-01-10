@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CircleArrowRight } from "lucide-react";
 
 const UPDATES = [
   {
@@ -18,18 +19,16 @@ export default function UpdateCard() {
   useEffect(() => {
     const t = setInterval(() => {
       setIndex((prev) => (prev + 1) % UPDATES.length);
-    }, 4000);
-
+    }, 5000);
     return () => clearInterval(t);
   }, []);
 
-  // 🔹 Pisahkan "judul — deskripsi"
   const raw = UPDATES[index].title;
   const [titleTag, restText] = raw.split("—");
 
   return (
-    <div className="mt-4">
-      <div className="w-140 bg-white/30 backdrop-blur-md rounded-[30px] shadow-lg p-2">
+    <div className="mt-2">
+      <div className="w-full p-2">
         <div className="h-8 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
@@ -38,15 +37,17 @@ export default function UpdateCard() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -30, opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-gray-700 text-center px-2"
+              className="text-gray-700 px-4"
             >
-              {/* ⭐ Badge Judul */}
-              <span className="text-[12px] font-semibold px-2 border border-green-400 rounded-lg bg-green-300/60">
-                {titleTag?.trim()}
-              </span>
+              <div className="flex items-center justify-center gap-2">
+                <CircleArrowRight size={16} className="shrink-0" />
 
-              {/* ➜ Sisa teks */}
-              <span className="text-[12px]"> {restText?.trim()}</span>
+                <span className="text-[12px] font-semibold px-2 py-0.5 border border-green-400 rounded-lg bg-green-300/60">
+                  {titleTag?.trim()}
+                </span>
+
+                <span className="text-[12px]">{restText?.trim()}</span>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

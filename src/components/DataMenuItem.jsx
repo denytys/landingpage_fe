@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLoading } from "./GlobalLinkLoader";
 
 export default function DataMenuItem({
   icon: Icon,
@@ -8,6 +9,7 @@ export default function DataMenuItem({
   menus = [],
 }) {
   const [open, setOpen] = useState(false);
+  const { setLoading } = useLoading();
 
   return (
     <motion.div
@@ -24,11 +26,9 @@ export default function DataMenuItem({
         transition-all duration-400
       "
     >
-      {/* HEADER – FIXED HEIGHT */}
+      {/* HEADER */}
       <div className="flex items-start gap-4 px-6 py-6">
-        {/* ICON WRAPPER */}
         <div className="relative w-16 h-16 rounded-2xl bg-white/40 flex items-center justify-center flex-none shrink-0">
-          {/* OUTLINE ICON */}
           <Icon
             size={32}
             className="
@@ -38,7 +38,6 @@ export default function DataMenuItem({
             "
           />
 
-          {/* COLOR ICON */}
           {ColorIcon &&
             (typeof ColorIcon === "string" ? (
               <img
@@ -68,7 +67,8 @@ export default function DataMenuItem({
           <h3 className="text-sm font-semibold text-slate-800 leading-tight">
             {label}
           </h3>
-          <p className="text-xs text-slate-600 mt-1 leading-snug transition-all duration-500">
+
+          <p className="text-xs text-slate-600 mt-1 leading-snug">
             {label === "Strategic" &&
               "Data historis yang dapat digunakan untuk keperluan pengambilan keputusan secara komprehensif serta dapat digunakan pula oleh instansi lain untuk menganalisa serta data awal pengambilan kebijakan sektoral."}
 
@@ -92,15 +92,19 @@ export default function DataMenuItem({
         {menus.map((item, i) => (
           <div
             key={i}
-            onClick={() =>
-              window.open(item.url, "_blank", "noopener,noreferrer")
-            }
             className="
               flex items-center gap-3
               p-3 rounded-xl
               bg-white/50 hover:bg-white/70
-              transition
+              transition cursor-pointer
             "
+            onClick={() => {
+              setLoading(true);
+              setTimeout(() => {
+                window.open(item.url, "_blank", "noopener,noreferrer");
+                setLoading(false);
+              }, 1800);
+            }}
           >
             <item.icon size={18} className="text-slate-700" />
             <span className="text-xs font-medium text-slate-800">
