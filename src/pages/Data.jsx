@@ -24,8 +24,9 @@ import {
 
 import DataMenuItem from "../components/DataMenuItem";
 
-export default function Data({ activeData, setActiveData }) {
+export default function Data() {
   const [page, setPage] = useState(1);
+  const [activeData, setActiveData] = useState(null);
 
   return (
     <div className="relative">

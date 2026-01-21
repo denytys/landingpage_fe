@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLoading } from "./GlobalLinkLoader";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
+import { protectedLink } from "../auth/ProtectedLink";
 
 export default function DataMenuItem({
   icon: Icon,
@@ -10,6 +13,8 @@ export default function DataMenuItem({
 }) {
   const [open, setOpen] = useState(false);
   const { setLoading } = useLoading();
+  const auth = useAuth();
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -99,11 +104,7 @@ export default function DataMenuItem({
               transition cursor-pointer
             "
             onClick={() => {
-              setLoading(true);
-              setTimeout(() => {
-                window.open(item.url, "_blank", "noopener,noreferrer");
-                setLoading(false);
-              }, 1800);
+              navigate("/login");
             }}
           >
             <item.icon size={18} className="text-slate-700" />
