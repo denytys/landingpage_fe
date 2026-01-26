@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="relative flex items-center">
         {/* Tengah */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <p className="text-xs text-gray-700 font-medium">
+          <p className="text-xs text-gray-700 font-normal">
             Powered by Best Trust © 2025
           </p>
         </div>

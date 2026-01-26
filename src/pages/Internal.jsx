@@ -1,17 +1,9 @@
-import {
-  LayoutDashboard,
-  Settings,
-  ChartNoAxesColumn,
-  QrCode,
-  Clock,
-  GitCompare,
-} from "lucide-react";
-
-import iconBT from "../assets/images/iconbt.png";
+import iconBT from "../assets/images/iconbt2.png";
 import iconPS from "../assets/images/iconpresensi.png";
 import iconPQ from "../assets/images/iconpassq.png";
 import iconES from "../assets/images/iconesps.png";
 import iconWM from "../assets/images/iconwebmon.png";
+import iconEL from "../assets/images/iconelab.png";
 import MenuItem from "../components/MenuItem";
 import { useLoading } from "../components/GlobalLinkLoader";
 
@@ -26,40 +18,40 @@ export default function Internal() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 p-6 pt-10 bg-white/30 backdrop-blur-md rounded-[60px] shadow-md">
+      <div className="grid grid-cols-4 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
         <MenuItem
-          icon={LayoutDashboard}
           colorIcon={iconBT}
-          label="Best Trust"
+          label="Layanan Sertifikasi"
           url="https://apps.karantinaindonesia.go.id/"
         />
 
         <MenuItem
-          icon={Settings}
+          colorIcon={iconEL}
+          label="e-Lab"
+          url="https://elab.karantinaindonesia.go.id/"
+        />
+
+        <MenuItem
           colorIcon={iconPS}
           label="Sys-Admin"
           url="https://apps.karantinaindonesia.go.id/sys-admin/"
         />
         <MenuItem
-          icon={ChartNoAxesColumn}
           colorIcon={iconWM}
           label="Web Mon"
           url="https://intranet.karantinaindonesia.go.id/webmon/"
         />
         <MenuItem
-          icon={QrCode}
           colorIcon={iconPQ}
-          label="PassQ"
+          label="All Indonesia-PassQ"
           url="https://passq.karantinaindonesia.go.id/officer/"
         />
         <MenuItem
-          icon={Clock}
           colorIcon={iconPS}
           label="ePresensi"
           url="https://presensi.karantinaindonesia.go.id/"
         />
         <MenuItem
-          icon={GitCompare}
           colorIcon={iconES}
           label="ESPS"
           url="https://intranet.karantinaindonesia.go.id/esps/"

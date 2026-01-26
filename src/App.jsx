@@ -7,15 +7,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Portal />
-          </ProtectedRoute>
-        }
-      />
+      <Route path="/" element={<Portal />} />
     </Routes>
   );
 }

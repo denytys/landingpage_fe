@@ -1,5 +1,3 @@
-import { SmilePlus, FileText, Megaphone, FileSearchCorner } from "lucide-react";
-
 import {
   FcApprove,
   FcDocument,
@@ -18,29 +16,25 @@ export default function Eksternal() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 p-6 pt-10 bg-white/30 backdrop-blur-md rounded-[60px] shadow-md">
+      <div className="grid grid-cols-3 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
         <MenuItem
-          icon={SmilePlus}
           colorIcon={FcApprove}
           label="Registrasi"
           url="https://registrasi.karantinaindonesia.go.id/"
         />
         <MenuItem
-          icon={FileText}
           colorIcon={FcDocument}
           label="PTK Online"
           url="https://ptk.karantinaindonesia.go.id/"
         />
         <MenuItem
-          icon={Megaphone}
           colorIcon={FcAdvertising}
           label="Prior Notice"
           url="https://notice.karantinaindonesia.go.id/"
         />
         <MenuItem
-          icon={FileSearchCorner}
           colorIcon={FcFinePrint}
-          label="Check Cert"
+          label="Validasi Sertifikat"
           url="https://ptk.karantinaindonesia.go.id/check-cert/"
         />
       </div>

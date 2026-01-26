@@ -1,13 +1,16 @@
-import { useState } from "react";
 import Header from "./Header";
 import Internal from "./Internal";
 import Eksternal from "./Eksternal";
-import Data from "./Data";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
+import { useAuth } from "../auth/AuthContext";
+import { Navigate } from "react-router-dom";
 
 export default function Portal() {
-  const [activeData, setActiveData] = useState(null);
+  const { isUser, authType } = useAuth();
+  if (!authType) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <div
@@ -30,9 +33,8 @@ export default function Portal() {
         transition={{ duration: 0.25, ease: "easeOut", delay: 0.1 }}
         className="flex-1 flex flex-wrap justify-center items-center gap-8 my-6"
       >
-        <Internal />
+        {isUser && <Internal />}
         <Eksternal />
-        <Data activeData={activeData} setActiveData={setActiveData} />
       </motion.main>
 
       {/* FOOTER */}
