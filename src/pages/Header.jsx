@@ -1,5 +1,6 @@
 import logo from "../assets/images/barantin.png";
-import UpdateCard from "../components/UpdateCard";
+// import logo2 from "../assets/images/Logo-best-trust.png";
+// import UpdateCard from "../components/UpdateCard";
 import { useAuth } from "../auth/AuthContext";
 import { LogOut, User } from "lucide-react";
 import { useState } from "react";
@@ -18,6 +19,11 @@ export default function Header() {
         {/* LEFT */}
         <div className="flex items-center gap-4">
           <img src={logo} alt="Barantin" className="ml-2 h-14" />
+          {/* <img
+            src={logo2}
+            alt="Logo-best-trust"
+            className="h-12! bg-gray-700 p-2 rounded-xl"
+          /> */}
           <div>
             <h1 className="text-xl font-semibold text-gray-800">
               Sistem Informasi
@@ -28,7 +34,7 @@ export default function Header() {
 
         {/* RIGHT */}
         <div className="flex items-center gap-6 relative">
-          {user && <UpdateCard />}
+          {/* {user && <UpdateCard />} */}
 
           {/* USER MODE */}
           {user && (
@@ -49,11 +55,11 @@ export default function Header() {
               </div>
 
               {open && (
-                <div className="absolute right-0 top-full mt-3 w-44 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg">
+                <div className="absolute right-3 top-full mt-5.5 w-33 bg-white/40 backdrop-blur-md rounded-2xl shadow-lg">
                   <button
                     onClick={logout}
                     className="w-full flex items-center gap-2 px-4 py-3
-                               text-sm text-red-600 hover:bg-red-50 hover:rounded-2xl"
+                               text-sm text-red-600 hover:bg-red-50/40 hover:rounded-2xl"
                   >
                     <LogOut size={16} />
                     Logout

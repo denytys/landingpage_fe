@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="ml-auto mr-2">
           <motion.div
             layout
-            className="group flex items-center gap-4 px-4 py-2 transition-all duration-500 overflow-hidden"
+            className="group flex items-center gap-4 px-4 py-2 transition-all duration-300 overflow-hidden"
           >
             <div className="relative">
               <ArrowBigLeftDash

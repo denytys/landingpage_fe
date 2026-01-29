@@ -4,8 +4,13 @@ import iconPQ from "../assets/images/iconpassq.png";
 import iconES from "../assets/images/iconesps.png";
 import iconWM from "../assets/images/iconwebmon.png";
 import iconEL from "../assets/images/iconelab.png";
+import iconSA from "../assets/images/iconsysadmin.png";
+import iconTE from "../assets/images/icontte.png";
+import iconEP from "../assets/images/iconepnbp.png";
+import iconQA from "../assets/images/iconqai.png";
 import MenuItem from "../components/MenuItem";
 import { useLoading } from "../components/GlobalLinkLoader";
+import { ShieldUser } from "lucide-react";
 
 export default function Internal() {
   const { setLoading } = useLoading();
@@ -13,12 +18,13 @@ export default function Internal() {
   return (
     <div className="relative">
       <div className="absolute -top-5 left-8 z-10">
-        <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-700 shadow-md">
+        <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-600 shadow-md flex flex-row items-center justify-center gap-2">
+          <ShieldUser size={18} />
           Internal
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
+      <div className="grid grid-cols-5 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
         <MenuItem
           colorIcon={iconBT}
           label="Layanan Sertifikasi"
@@ -26,14 +32,32 @@ export default function Internal() {
         />
 
         <MenuItem
+          colorIcon={iconQA}
+          label="Quarantine AI"
+          url="https://apps.karantinaindonesia.go.id/"
+        />
+
+        <MenuItem
           colorIcon={iconEL}
-          label="e-Lab"
+          label="e Lab"
           url="https://elab.karantinaindonesia.go.id/"
         />
 
         <MenuItem
-          colorIcon={iconPS}
-          label="Sys-Admin"
+          colorIcon={iconEP}
+          label="e PNBP"
+          url="https://epnbp.karantinaindonesia.go.id/"
+        />
+
+        <MenuItem
+          colorIcon={iconTE}
+          label="TTE"
+          url="https://tte.karantinaindonesia.go.id/"
+        />
+
+        <MenuItem
+          colorIcon={iconSA}
+          label="Sys Admin"
           url="https://apps.karantinaindonesia.go.id/sys-admin/"
         />
         <MenuItem
@@ -48,7 +72,7 @@ export default function Internal() {
         />
         <MenuItem
           colorIcon={iconPS}
-          label="ePresensi"
+          label="e Presensi"
           url="https://presensi.karantinaindonesia.go.id/"
         />
         <MenuItem

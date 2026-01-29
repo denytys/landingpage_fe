@@ -21,7 +21,7 @@ export default function MenuItem({ colorIcon: ColorIcon, label, url }) {
         className="
           flex flex-col items-center gap-3
           transition-transform duration-300 ease-out
-          hover:scale-105
+          hover:scale-115
           will-change-transform
         "
       >
