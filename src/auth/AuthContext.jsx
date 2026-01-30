@@ -14,7 +14,9 @@ export function AuthProvider({ children }) {
     }
   });
 
-  const [authType, setAuthType] = useState(null);
+  const [authType, setAuthType] = useState(() => {
+    return localStorage.getItem("auth_type");
+  });
 
   const login = (payload) => {
     setAuth(payload);
@@ -26,12 +28,14 @@ export function AuthProvider({ children }) {
   const loginAsGuest = () => {
     setAuth(null);
     setAuthType("guest");
+    localStorage.setItem("auth_type", "guest");
   };
 
   const logout = () => {
     setAuth(null);
     setAuthType(null);
     localStorage.removeItem("ums_user");
+    localStorage.removeItem("auth_type");
     navigate("/login", { replace: true });
   };
 

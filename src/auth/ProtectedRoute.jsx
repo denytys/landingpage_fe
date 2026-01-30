@@ -2,9 +2,10 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
 export default function ProtectedRoute({ children }) {
-  const { user } = useAuth();
+  const { authType } = useAuth();
 
-  if (!user) {
+  // belum login & belum guest
+  if (!authType) {
     return <Navigate to="/login" replace />;
   }
 

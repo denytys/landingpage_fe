@@ -8,23 +8,27 @@ import iconSA from "../assets/images/iconsysadmin.png";
 import iconTE from "../assets/images/icontte.png";
 import iconEP from "../assets/images/iconepnbp.png";
 import iconQA from "../assets/images/iconqai.png";
+import iconDM from "../assets/images/icondashmon.png";
 import MenuItem from "../components/MenuItem";
 import { useLoading } from "../components/GlobalLinkLoader";
 import { ShieldUser } from "lucide-react";
+import { useAuth } from "../auth/AuthContext";
 
 export default function Internal() {
   const { setLoading } = useLoading();
+  const { isUser } = useAuth();
+  if (!isUser) return null;
 
   return (
     <div className="relative">
       <div className="absolute -top-5 left-8 z-10">
-        <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-600 shadow-md flex flex-row items-center justify-center gap-2">
+        <div className="px-6 py-2 bg-white/40 backdrop-blur-md rounded-full text-sm font-semibold text-gray-700 shadow-md flex flex-row items-center justify-center gap-2">
           <ShieldUser size={18} />
           Internal
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
+      <div className="grid grid-cols-3 md:grid-cols-5 gap-8 p-6 px-10 py-10 bg-white/30 backdrop-blur-md rounded-[40px] shadow-md">
         <MenuItem
           colorIcon={iconBT}
           label="Layanan Sertifikasi"
@@ -75,10 +79,15 @@ export default function Internal() {
           label="e Presensi"
           url="https://presensi.karantinaindonesia.go.id/"
         />
-        <MenuItem
+        {/* <MenuItem
           colorIcon={iconES}
           label="ESPS"
           url="https://intranet.karantinaindonesia.go.id/esps/"
+        /> */}
+        <MenuItem
+          colorIcon={iconDM}
+          label="Monitoring Data"
+          url="https://dashmon.karantinaindonesia.go.id/"
         />
       </div>
     </div>
