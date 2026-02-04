@@ -15,8 +15,9 @@ export default function Portal() {
   return (
     <div
       className="min-h-screen flex flex-col bg-cover bg-no-repeat bg-fixed overflow-hidden"
-      style={{ backgroundImage: "url('/src/assets/images/background.png')" }}
+      style={{ backgroundImage: "url('/src/assets/images/background1.png')" }}
     >
+      <div className="absolute inset-0 bg-black/20" />
       {/* HEADER */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}

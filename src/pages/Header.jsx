@@ -26,7 +26,7 @@ export default function Header() {
           /> */}
           <div>
             <h1 className="text-xl font-semibold text-gray-800">
-              Sistem Informasi
+              Layanan Digital
             </h1>
             <p className="text-sm text-gray-600">Badan Karantina Indonesia</p>
           </div>

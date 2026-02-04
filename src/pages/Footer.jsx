@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Tengah */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <p className="text-xs text-gray-700 font-normal">
-            Powered by Best Trust © 2025
+            Powered by Best Trust © 2026
           </p>
         </div>
 

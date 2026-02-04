@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import axios from "axios";
 import { CircleUser, Eye, EyeOff, Key } from "lucide-react";
-import bgLogin from "../assets/images/background.png";
-import iconLanding from "../assets/images/iconlandingpage.png";
+import bgLogin from "../assets/images/background1.png";
+import iconBarantin from "../assets/images/barantin.png";
+import iconBesttrust from "../assets/images/Logo-best-trust.png";
 import { logDev } from "../utils/logDev";
 import { message, Modal, Spin } from "antd";
 
@@ -108,8 +109,10 @@ export default function Login() {
       >
         {/* HEADER */}
         <div className="flex flex-col items-center text-center mb-8">
-          <img src={iconLanding} alt="Barantin" className="h-16 mb-2" />
-          <h2 className="text-lg font-semibold">Sistem Informasi</h2>
+          {/* <div className="flex flex-row gap-2"></div> */}
+          <img src={iconBarantin} alt="Barantin" className="h-16 mb-2" />
+          <h2 className="text-lg font-semibold">Layanan Digital</h2>
+          {/* <h2 className="text-lg font-semibold">Sistem Informasi</h2> */}
           <p className="text-sm text-gray-700">Badan Karantina Indonesia</p>
         </div>
 
