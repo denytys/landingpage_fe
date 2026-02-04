@@ -1,5 +1,5 @@
 import logo from "../assets/images/barantin.png";
-// import logo2 from "../assets/images/Logo-best-trust.png";
+import logo2 from "../assets/images/Logo-best-trust1.png";
 // import UpdateCard from "../components/UpdateCard";
 import { useAuth } from "../auth/AuthContext";
 import { LogOut, User } from "lucide-react";
@@ -19,11 +19,9 @@ export default function Header() {
         {/* LEFT */}
         <div className="flex items-center gap-4">
           <img src={logo} alt="Barantin" className="ml-2 h-14" />
-          {/* <img
-            src={logo2}
-            alt="Logo-best-trust"
-            className="h-12! bg-gray-700 p-2 rounded-xl"
-          /> */}
+          <div className="px-2 py-2 bg-gray-800/90 backdrop-blur-md rounded-2xl text-sm font-semibold text-gray-700 shadow-md flex flex-row items-center justify-center gap-2">
+            <img src={logo2} alt="Logo-best-trust1" className="h-8" />
+          </div>
           <div>
             <h1 className="text-xl font-semibold text-gray-800">
               Layanan Digital

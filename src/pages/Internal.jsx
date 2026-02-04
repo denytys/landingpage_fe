@@ -13,6 +13,7 @@ import MenuItem from "../components/MenuItem";
 import { useLoading } from "../components/GlobalLinkLoader";
 import { ShieldUser } from "lucide-react";
 import { useAuth } from "../auth/AuthContext";
+import logo2 from "../assets/images/Logo-best-trust.png";
 
 export default function Internal() {
   const { setLoading } = useLoading();
