@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { useAuth } from "../auth/AuthContext";
 import { Navigate } from "react-router-dom";
+import bgLogin from "../assets/images/background1.png";
 
 export default function Portal() {
   const { isUser, authType } = useAuth();
@@ -15,7 +16,7 @@ export default function Portal() {
   return (
     <div
       className="min-h-screen flex flex-col bg-cover bg-no-repeat bg-fixed overflow-hidden"
-      style={{ backgroundImage: "url('/src/assets/images/background1.png')" }}
+      style={{ backgroundImage: `url(${bgLogin})` }}
     >
       <div className="absolute inset-0 bg-black/20" />
       {/* HEADER */}

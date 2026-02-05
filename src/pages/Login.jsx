@@ -5,7 +5,7 @@ import axios from "axios";
 import { CircleUser, Eye, EyeOff, Key } from "lucide-react";
 import bgLogin from "../assets/images/background1.png";
 import iconBarantin from "../assets/images/barantin.png";
-import iconBesttrust from "../assets/images/Logo-best-trust.png";
+// import iconBesttrust from "../assets/images/Logo-best-trust.png";
 import { logDev } from "../utils/logDev";
 import { message, Modal, Spin } from "antd";
 
@@ -67,7 +67,7 @@ export default function Login() {
         });
 
         message.success("Yeay, Berhasil Login. Selamat Datang!");
-        navigate("/", { replace: true });
+        navigate("/portal", { replace: true });
       } else {
         handleWrongPassword(res.message || "Login gagal (token tidak valid)");
       }
@@ -181,7 +181,7 @@ export default function Login() {
           type="button"
           onClick={() => {
             loginAsGuest();
-            navigate("/", { replace: true });
+            navigate("/portal", { replace: true });
           }}
           className="w-full text-xs py-2 rounded-full bg-gray-500 hover:bg-gray-600 transition-all duration-300 text-white"
         >

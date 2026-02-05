@@ -4,13 +4,13 @@ import { protectedLink } from "../auth/ProtectedLink";
 
 export default function MenuItem({ colorIcon: ColorIcon, label, url }) {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { authType } = useAuth();
 
   return (
     <div
       onClick={() =>
         protectedLink({
-          isLogin: !!user,
+          authType,
           navigate,
           url,
         })

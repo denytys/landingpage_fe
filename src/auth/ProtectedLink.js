@@ -1,9 +1,28 @@
-export function protectedLink({ isLogin, navigate, url }) {
-    if (!isLogin) {
+export function protectedLink({ authType, navigate, url }) {
+    // belum login sama sekali
+    if (!authType) {
         sessionStorage.setItem("redirectAfterLogin", url);
         navigate("/login");
         return;
     }
 
-    window.open(url, "_blank", "noopener,noreferrer");
+    // guest
+    if (authType === "guest") {
+        // link eksternal → boleh
+        if (url.startsWith("http")) {
+            window.open(url, "_blank", "noopener,noreferrer");
+            return;
+        }
+
+        // link internal → tolak halus
+        navigate("/");
+        return;
+    }
+
+    // user login
+    if (url.startsWith("http")) {
+        window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+        navigate(url);
+    }
 }
