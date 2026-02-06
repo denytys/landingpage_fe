@@ -14,7 +14,7 @@ export default function Header() {
   if (!user && !isGuest) return null;
 
   return (
-    <header className="bg-white/30 backdrop-blur-md rounded-b-[50px] px-6 py-4 shadow-md">
+    <header className="bg-white/50 backdrop-blur-md rounded-b-[50px] px-6 py-4 shadow-md">
       <div className="flex items-center justify-between">
         {/* LEFT */}
         <div className="flex items-center gap-4">

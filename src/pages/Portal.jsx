@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { useAuth } from "../auth/AuthContext";
 import { Navigate } from "react-router-dom";
-import bgLogin from "../assets/images/background1.png";
+// import bgLogin from "../assets/images/background1.png";
 
 export default function Portal() {
   const { isUser, authType } = useAuth();
@@ -14,10 +14,11 @@ export default function Portal() {
   }
 
   return (
-    <div
-      className="relative min-h-screen flex flex-col bg-cover bg-no-repeat bg-fixed overflow-hidden"
-      style={{ backgroundImage: `url(${bgLogin})` }}
-    >
+    // <div
+    //   className="relative min-h-screen flex flex-col bg-cover bg-no-repeat bg-fixed overflow-hidden"
+    //   style={{ backgroundImage: `url(${bgLogin})` }}
+    // >
+    <div className="relative min-h-screen bg-linear-to-br from-blue-300 via-sky-300 to-indigo-300 overflow-hidden">
       <div className="absolute inset-0 bg-black/20 pointer-events-none" />
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* HEADER */}

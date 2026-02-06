@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-white/30 backdrop-blur-md rounded-t-[50px] px-6 py-2 shadow-md">
+    <footer className="bg-white/50 backdrop-blur-md rounded-t-[50px] px-6 py-2 shadow-md">
       <div className="relative flex items-center">
         {/* Tengah */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

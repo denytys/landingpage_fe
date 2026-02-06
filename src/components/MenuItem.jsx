@@ -29,14 +29,14 @@ export default function MenuItem({ colorIcon: ColorIcon, label, url }) {
           className="
             w-19 md:w-26 h-19 md:h-26
             rounded-[28px]
-            bg-white/30
+            bg-white/50
             flex items-center justify-center
             shadow-sm
             transition-all duration-300
             hover:shadow-lg hover:bg-blue-600/30
           "
         >
-          <div className="w-14 h-14 flex items-center justify-center">
+          <div className="w-20 h-20 flex items-center justify-center">
             {typeof ColorIcon === "string" ? (
               <img
                 src={ColorIcon}
@@ -44,7 +44,7 @@ export default function MenuItem({ colorIcon: ColorIcon, label, url }) {
                 className="w-full h-full object-contain pointer-events-none"
               />
             ) : (
-              <ColorIcon size={48} />
+              <ColorIcon size={52} />
             )}
           </div>
         </div>
